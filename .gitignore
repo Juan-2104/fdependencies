@@ -1,0 +1,30 @@
+# Logs
+logs
+*.log
+.zip*
+package-lock.json
+.history
+
+# test files
+src/**/**/*.env
+src/**/**/event.json
+context.json
+event_sources.json
+testreports
+
+# Dependency directories
+src/node_modules
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# dotenv environment variables file
+.env
+.env.test
+
+#vscode
+.history

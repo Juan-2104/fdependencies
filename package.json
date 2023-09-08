@@ -1,0 +1,19 @@
+{
+  "name": "g6flow_dependencies",
+  "version": "1.0.0",
+  "description": "Dependencies for G6 Flow",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=uat node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git-codecommit.us-east-1.amazonaws.com/v1/repos/G6flow_Dependencies"
+  },
+  "author": "Global_Seis",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "winston": "^3.8.2"
+  }
+}
