@@ -1,6 +1,6 @@
 {
   "name": "g6flow_dependencies",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.1",
   "description": "Dependencies for G6 Flow",
   "main": "index.js",
   "scripts": {
