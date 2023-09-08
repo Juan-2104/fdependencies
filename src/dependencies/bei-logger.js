@@ -1,5 +1,3 @@
-const dotenv = require('dotenv');
-dotenv.config();
 const winston = require('winston')
 const { combine, timestamp, label, printf, splat, simple } = winston.format;
 // Establezco el nivel de logs para la herramienta, desde la variable de entorno o con un default.
