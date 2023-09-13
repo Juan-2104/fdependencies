@@ -14,6 +14,7 @@ El repositorio `G6Flow_dependencies` contiene un conjunto de utilidades y funcio
   - `crypto-utils.js`: Funciones para cifrar y descifrar datos.
   - `json-eval.js`: Funciones relacionadas con la evaluación y serialización de JSON.
   - `secutils.js`: Utilidades relacionadas con la seguridad y la validación de claves API.
+  - `handler.js`: Utilidades relacionadas con el manejo de respuestas, tanto errores como operaciones exitosas.
 
 #### Uso:
 
@@ -41,4 +42,31 @@ Para versiones pre-lanzamiento (como betas), se añade un guion seguido de un id
 
 ```
 1.0.0-beta.1
+```
+#### Publicar nueva versión:
+
+Publicar una nueva versión en AWS CodeArtifact
+
+Ajusta la nueva versión según la actualización, siguiendo el SemVer. Esto lo modificas en el package.json campo "version"
+
+Para publicar una nueva versión de las dependencias en AWS CodeArtifact, sigue los siguientes pasos:
+
+```
+aws codeartifact login --tool npm --domain g6flow --repository G6_Flow
+```
+
+Configura tus credenciales de AWS: Asegúrate de tener configuradas tus credenciales de AWS en tu máquina. Puedes hacerlo usando el comando aws configure.
+
+Empaqueta tu librería: Si estás usando npm, puedes crear un archivo .tgz de tu paquete con el siguiente comando:
+
+Publica tu paquete: Usa el siguiente comando para publicar tu paquete en AWS CodeArtifact:
+
+```
+npm publish
+```
+
+Verificación: Una vez que hayas publicado tu paquete, puedes verificarlo en el AWS CodeArtifact Console bajo el dominio y repositorio especificados.
+
+```
+npm pack
 ```
