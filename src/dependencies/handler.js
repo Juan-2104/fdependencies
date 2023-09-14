@@ -1,4 +1,4 @@
-const { Logger } = require("./src/dependencies/bei-Logger");
+const logger = require('./bei-logger');
 
 /**
  * Envía una respuesta exitosa con un código 200.
@@ -7,7 +7,7 @@ const { Logger } = require("./src/dependencies/bei-Logger");
  * @param {string} [message="Operation successful"] - Mensaje de éxito a registrar.
  */
 function sendSuccess(reply, data, message = "Operation successful") {
-    Logger.debug(message);
+    logger.debug(message);
     reply.code(200).send(data);
 }
 
@@ -17,7 +17,7 @@ function sendSuccess(reply, data, message = "Operation successful") {
  * @param {Error} error - Objeto de error.
  */
 function sendError(reply, error) {
-    Logger.error(`Error: ${error.message}`);
+    logger.error(`Error: ${error.message}`);
     reply.code(error.status ? error.status : 500).send({
         errorMessage: error.message
     });
@@ -31,7 +31,7 @@ function sendError(reply, error) {
  * @param {string} logMessage - Mensaje a registrar.
  */
 function sendCustomResponse(reply, statusCode, data, logMessage) {
-    Logger.info(logMessage);
+    logger.info(logMessage);
     reply.code(statusCode).send(data);
 }
 
