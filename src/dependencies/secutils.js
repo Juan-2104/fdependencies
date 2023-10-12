@@ -13,6 +13,7 @@ class NotAuthorizedError extends Error {
 async function ValidaAPIKey(req) {
     if (req.headers.apikey !== process.env.APIKEY)
         throw new NotAuthorizedError('You need a valid APIKEY')
+    return;
 }
 
 module.exports ={

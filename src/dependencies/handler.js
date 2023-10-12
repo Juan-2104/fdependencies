@@ -6,7 +6,7 @@ const logger = require('./bei-logger');
  * @param {Object} data - Datos a enviar en la respuesta.
  * @param {string} [message="Operation successful"] - Mensaje de éxito a registrar.
  */
-function sendSuccess(reply, data, message = "Operation successful") {
+function successResponse(reply, data, message = "Operation successful") {
     logger.debug(message);
     reply.code(200).send(data);
 }
@@ -16,7 +16,7 @@ function sendSuccess(reply, data, message = "Operation successful") {
  * @param {Object} reply - Objeto de respuesta Fastify.
  * @param {Error} error - Objeto de error.
  */
-function sendError(reply, error) {
+function errorResponse(reply, error) {
     logger.error(`Error: ${error.message}`);
     reply.code(error.status ? error.status : 500).send({
         errorMessage: error.message
@@ -36,7 +36,7 @@ function sendCustomResponse(reply, statusCode, data, logMessage) {
 }
 
 module.exports = {
-    sendSuccess,
-    sendError,
+    successResponse,
+    errorResponse,
     sendCustomResponse
 };
